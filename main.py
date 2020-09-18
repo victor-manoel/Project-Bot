@@ -1,45 +1,22 @@
-
-def resposta():
-  resp = input('>: ').lower().replace('é','e')
-  return resp
+#importar arquivo de outra pasta
+from functions import *
 
 print('Olá, qual o seu nome ?')
-nome = resposta()
-
-
-#nome = nome.lower()
-#nome = nome.replace('é','e')
-#condição para evitar erros na digitação do usuario
-if 'o meu nome e ' in nome:
-  nome = nome[13: ]
-
-  nome = nome.title()
-
-print('Muito prazer, '+nome)
-print('Voce deseja fazer um pedido ?')
-simnao = resposta()
-
-if simnao == 'sim':
-  print('O que voce deseja ?')
-
+nome = pegaNome(resposta())
+resp = respondeNome(nome)
+print (resp)
 
 while True:
   resp = resposta()
   if resp == 'tchau':
-    print('tchau, tchau')
     break
   else:
     print('O que voce deseja ?')
+    
+print('tchau, tchau')
 
 
-"""class pedido():
-    def _init_(self):
-        self.nomeC = ""
-        self.nomeP = ""
-        self.precoP = 0
-        self.precos = [12, 22, 32]
-        self.cardapio = ["sanduiche1","sanduiche2","sanduiche3"]
-
+"""
     def gerarnota(self):
         print(self.nomeC)
         print(self.nomeP)
