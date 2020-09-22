@@ -6,12 +6,15 @@ nome = pegaNome(resposta())
 resp = respondeNome(nome)
 print (resp)
 
+if resp == 'sim':
+ resp = mostrarCardapio(self)
+ print (resp)
+
 while True:
   resp = resposta()
   if resp == 'tchau':
     break
-  else:
-    print('O que voce deseja ?')
+ 
     
 print('tchau, tchau')
 
