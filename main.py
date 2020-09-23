@@ -7,7 +7,7 @@ resp = respondeNome(nome)
 print (resp)
 
 if resp == 'sim':
- resp = mostrarCardapio(self)
+ resp = cardapioCompleto(pedido)
  print (resp)
 
 while True:
