@@ -6,9 +6,11 @@ nome = pegaNome(resposta())
 resp = respondeNome(nome)
 print (resp)
 
+resp = resposta()
 if resp == 'sim':
- resp = cardapioCompleto(pedido)
- print (resp)
+  cardapioCompleto()
+  print('Escolha o código do seu pedido')
+  
 
 while True:
   resp = resposta()

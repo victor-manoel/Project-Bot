@@ -20,7 +20,7 @@ def mostrarCardapio(self):
   for i in range(0, len(self.cardapio)):
     print(self.cardapio[i], self.precos[i])
 
-def cardapioCompleto(pedido):
+def cardapioCompleto():
     print('___________________________________________\n')
     print('CODIGO / HAMBURGUERES / PREÇOS\n')
     print('1-BRASIL - 10,00 R$\n')
@@ -34,4 +34,4 @@ def cardapioCompleto(pedido):
     print("5-BELGICA - 21,00 R$\n")
     print('pão-2 carnes-presunto-queijo-salada-calabresa-bacon-ovo-frango\n')
     print('____________________________________________\n')
-    pedido()
+    
