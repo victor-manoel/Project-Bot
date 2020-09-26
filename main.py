@@ -10,6 +10,12 @@ resp = resposta()
 if resp == 'sim':
   cardapioCompleto()
   print('Escolha o código do seu pedido')
+else:
+  print('tchau, tchau')
+
+resp = resposta()
+if resp == '1':
+  print('O valor é 10 reais')
   
 
 while True:
