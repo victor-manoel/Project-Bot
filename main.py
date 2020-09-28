@@ -1,5 +1,6 @@
 #importar arquivo de outra pasta
 from functions import *
+import sys
 
 print('Olá, qual o seu nome ?')
 nome = pegaNome(resposta())
@@ -9,13 +10,16 @@ print (resp)
 resp = resposta()
 if resp == 'sim':
   cardapioCompleto()
-  print('Escolha o código do seu pedido')
 else:
   print('tchau, tchau')
 
+
+print('Quer fazer um pedido ? responda com sim ou não')
 resp = resposta()
-if resp == '1':
-  print('O valor é 10 reais')
+if resp == 'sim':
+  pedido()
+else:
+  sys.exit()
   
 
 while True:
@@ -26,24 +30,3 @@ while True:
     
 print('tchau, tchau')
 
-
-"""
-    def gerarnota(self):
-        print(self.nomeC)
-        print(self.nomeP)
-        print(self.precoP)
-    
-    def gerarpedido(self):
-        self.nomeC = raw_input("Digite seu nome:\n")
-        self.mostrarcardapio()
-        n = int(raw_input("Digite o numero do pedido\n")) - 1
-        self.nomeP = self.cardapio[n]
-        self.precoP = self.precos[n]
-
-    def mostrarcardapio(self):
-        for i in range(0, len(self.cardapio)):
-            print(self.cardapio[i], self.precos[i])
-    
-pedido1 = pedido()
-pedido1.gerarpedido()
-pedido1.gerarnota()"""

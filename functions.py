@@ -36,22 +36,30 @@ def cardapioCompleto():
     print('____________________________________________\n')
 
 
-def valor():
-  lanche = raw_input ("5-NORTENHA R$16.80;6-PROIBIDA R$4.80;7-DEVASSA R$5.90;8-HEINEKEN R$9.00")
+def pedido():
+  print('Escolha o codigo do seu pedido')
+  lanche = input ()
 
-    q = float(raw_input("Quantos ???"))
+  q = float(input("Quantos ???\n"))
 
-      if lanche=="1":
-        valor_lanche = 6 * q
-        nome = "Antartida"
-      elif lanche=="2":
-        valor_lanche = 6.5 * q
-        nome = "Skol"
-      elif lanche == "3":
-        print('k')
-      else:
-        nome = None
-        print ('Valor invalido')
-  """if nome:
-    print (nome,"custa",valor_lanche,"Reais, por",q,"cerveja(s)")
+  if lanche=="1":
+    valor_lanche = 10 * q
+    nome = "Brasil"
+  elif lanche=="2":
+    valor_lanche = 15 * q
+    nome = "Alemanha"
+  elif lanche=="3":
+    valor_lanche = 16 * q
+    nome = "Argentina"
+  elif lanche == "4":
+    valor_lanche = 18 * q
+    nome = "Italia"
+  elif lanche == "5":
+    valor_lanche = 21 * q
+    nome = "Belgica"
+  else:
+    nome = None
+    print ('Valor invalido')
+  if nome:
+    print (nome,"custa",valor_lanche,"Reais, por",q,"hamburguer(s)")
     
