@@ -1,4 +1,4 @@
-class pedido():
+"""class pedido():
     def _init_(self):
         self.nomeC = ""
         self.nomeP = ""
@@ -20,3 +20,4 @@ class Chatbot():
 
 a = Chatbot()
 a.fala()
+"""
