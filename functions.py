@@ -63,3 +63,8 @@ def pedido():
   if nome:
     print (nome,"custa",valor_lanche,"Reais, por",q,"hamburguer(s)")
     
+  return valor_lanche
+
+def valor_total(valor_lanche):
+  total = valor_lanche
+  print('o valor total é',total)

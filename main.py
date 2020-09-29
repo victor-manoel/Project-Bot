@@ -2,6 +2,7 @@
 from functions import *
 #sys.exit linha 23 / função: finalizar programa
 import sys
+total = 0
 
 print('Olá, qual o seu nome ?')
 nome = pegaNome(resposta())
@@ -20,7 +21,7 @@ print('Quer fazer um pedido ? responda com sim ou não')
 while True:
   resp = resposta()
   if resp == 'sim':
-    pedido()
+    total += pedido()
     break
   elif resp == 'não':
     sys.exit() 
@@ -32,11 +33,11 @@ print('Quer fazer mais algum pedido ?')
 resp = resposta()
 if resp == 'sim':
   cardapioCompleto()
-  pedido()
-else:
-  sys.exit()
-  
+  total += pedido()
+elif resp == 'nao':
+  valor_total(total)
 
+  
 while True:
   resp = resposta()
   if resp == 'tchau':
