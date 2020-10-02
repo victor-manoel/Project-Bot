@@ -16,9 +16,7 @@ def respondeNome(nome):
   frase = 'Muito prazer '+nome
   return frase+', voce deseja ver o cardápio ? Responda com Sim ou Nao'
 
-def mostrarCardapio(self):
-  for i in range(0, len(self.cardapio)):
-    print(self.cardapio[i], self.precos[i])
+
 
 def cardapioCompleto():
     print('___________________________________________\n')
@@ -64,6 +62,16 @@ def pedido():
     print (nome,"custa",valor_lanche,"Reais, por",q,"hamburguer(s)")
     
   return valor_lanche
+
+
+"""def corrigirPedido():
+    print("Deseja trocar o pedido?")
+    res = input()
+    if 'nao' in res:
+        print("\nCerto")
+    else:
+        print("Escolha o novo pedido:\n")"""
+        
 
 def valor_total(valor_lanche):
   total = valor_lanche

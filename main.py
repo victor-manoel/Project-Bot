@@ -9,33 +9,41 @@ nome = pegaNome(resposta())
 resp = respondeNome(nome)
 print (resp)
 
-resp = resposta()
-if resp == 'sim':
-  cardapioCompleto()
-else:
-  print('tchau, tchau')
-  sys.exit()
+while True:
+  resp = resposta()
+  if resp == 'sim':
+    cardapioCompleto()
+    break
+  elif resp == 'nao':
+      sys.exit()
+  else:
+    print('Digite sim ou nao')
 
 
-print('Quer fazer um pedido ? responda com sim ou não')
+print('Quer fazer um pedido ? responda com sim ou nao')
 while True:
   resp = resposta()
   if resp == 'sim':
     total += pedido()
     break
-  elif resp == 'não':
+  elif resp == 'nao':
     sys.exit() 
     break
   else:
     print('Digite sim ou não')
    
-print('Quer fazer mais algum pedido ?')
-resp = resposta()
-if resp == 'sim':
-  cardapioCompleto()
-  total += pedido()
-elif resp == 'nao':
-  valor_total(total)
+
+while True:
+  print('Quer fazer mais algum pedido ? Responda com sim ou nao')
+  resp = resposta()
+  if resp == 'sim':
+    cardapioCompleto()
+    total += pedido()
+  elif resp == 'nao':
+    valor_total(total)
+    break
+  else:
+    print('Digite sim ou não')
 
   
 while True:
