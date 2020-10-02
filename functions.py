@@ -64,13 +64,15 @@ def pedido():
   return valor_lanche
 
 
-"""def corrigirPedido():
+def corrigirPedido():
     print("Deseja trocar o pedido?")
     res = input()
     if 'nao' in res:
         print("\nCerto")
     else:
-        print("Escolha o novo pedido:\n")"""
+        print('___________________________________________\n')
+        print("Escolha o novo pedido:\n")
+        cardapioCompleto()
         
 
 def valor_total(valor_lanche):

@@ -44,8 +44,10 @@ while True:
     break
   else:
     print('Digite sim ou não')
+    
+corrigirPedido()
+pedido()
 
-  
 while True:
   resp = resposta()
   if resp == 'tchau':
@@ -54,3 +56,5 @@ while True:
     
 print('tchau, tchau')
 
+
+#faltando uma repetição na hora de corrigir o produto
