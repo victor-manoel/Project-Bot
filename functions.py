@@ -65,14 +65,53 @@ def pedido():
 
 
 def corrigirPedido():
+    total = 0
     print("Deseja trocar o pedido?")
     res = input()
     if 'nao' in res:
         print("\nCerto")
     else:
         print('___________________________________________\n')
-        print("Escolha o novo pedido:\n")
         cardapioCompleto()
+        print('___________________________________________\n')
+        print("Escolha o código do seu novo pedido:\n")
+        lanche = input ()
+        valor_lanche = 0
+
+        q = float(input("Quantos ???\n"))
+
+        if lanche=="1":
+          valor_lanche = 10 * q
+          nome = "Brasil"
+        elif lanche=="2":
+          valor_lanche = 15 * q
+          nome = "Alemanha"
+        elif lanche=="3":
+          valor_lanche = 16 * q
+          nome = "Argentina"
+        elif lanche == "4":
+          valor_lanche = 18 * q
+          nome = "Italia"
+        elif lanche == "5":
+          valor_lanche = 21 * q
+          nome = "Belgica"
+        else:
+          nome = None
+          print ('Valor invalido')
+        if nome:
+          print (nome,"custa",valor_lanche,"Reais, por",q,"hamburguer(s)")
+
+        while True:
+          print('Quer fazer mais algum pedido ? Responda com sim ou nao')
+          resp = resposta()
+          if resp == 'sim':
+            cardapioCompleto()
+            total += pedido()
+          elif resp == 'nao':
+            valor_total(total)
+            break
+          else:
+            print('Digite sim ou não')
         
 
 def valor_total(valor_lanche):
