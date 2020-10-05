@@ -46,7 +46,7 @@ while True:
     print('Digite sim ou não')
     
 corrigirPedido()
-pedido()
+
 
 while True:
   resp = resposta()
