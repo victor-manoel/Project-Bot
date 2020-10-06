@@ -46,8 +46,11 @@ while True:
     print('Digite sim ou não')
     
 corrigirPedido()
+solicitaEndereco()
+print('Aguarde enquanto processamos o seu pedido...\n')
+nota(nome)
 
-
+  
 while True:
   resp = resposta()
   if resp == 'tchau':
@@ -56,5 +59,3 @@ while True:
     
 print('tchau, tchau')
 
-
-#faltando uma repetição na hora de corrigir o produto
