@@ -4,6 +4,9 @@ rua = 0
 bairro= 0
 numero= 0
 zona = 0
+nome_burguer = 0
+q = 0
+valor_lanche = 0
 
 def resposta():
   resp = input('>: ').lower().replace('é','e')
@@ -49,24 +52,24 @@ def pedido():
 
   if lanche=="1":
     valor_lanche = 10 * q
-    nome = "Brasil"
+    nome_burguer = "Brasil"
   elif lanche=="2":
     valor_lanche = 15 * q
-    nome = "Alemanha"
+    nome_burguer = "Alemanha"
   elif lanche=="3":
     valor_lanche = 16 * q
-    nome = "Argentina"
+    nome_burguer = "Argentina"
   elif lanche == "4":
     valor_lanche = 18 * q
-    nome = "Italia"
+    nome_burguer = "Italia"
   elif lanche == "5":
     valor_lanche = 21 * q
-    nome = "Belgica"
+    nome_burguer = "Belgica"
   else:
-    nome = None
+    nome_burguer = None
     print ('Valor invalido')
-  if nome:
-    print (nome,"custa",valor_lanche,"Reais, por",q,"hamburguer(s)")
+  if nome_burguer:
+    print (nome_burguer,"custa",valor_lanche,"Reais, por",q,"hamburguer(s)")
     
   return valor_lanche
 
@@ -89,24 +92,24 @@ def corrigirPedido():
 
         if lanche=="1":
           valor_lanche = 10 * q
-          nome = "Brasil"
+          nome_burguer = "Brasil"
         elif lanche=="2":
           valor_lanche = 15 * q
-          nome = "Alemanha"
+          nome_burguer = "Alemanha"
         elif lanche=="3":
           valor_lanche = 16 * q
-          nome = "Argentina"
+          nome_burguer = "Argentina"
         elif lanche == "4":
           valor_lanche = 18 * q
-          nome = "Italia"
+          nome_burguer = "Italia"
         elif lanche == "5":
           valor_lanche = 21 * q
-          nome = "Belgica"
+          nome_burguer = "Belgica"
         else:
-          nome = None
+          nome_burguer = None
           print ('Valor invalido')
-        if nome:
-          print (nome,"custa",valor_lanche,"Reais, por",q,"hamburguer(s)")
+        if nome_burguer:
+          print (nome_burguer,"custa",valor_lanche,"Reais, por",q,"hamburguer(s)")
 
         while True:
           print('Quer fazer mais algum pedido ? Responda com sim ou nao')
@@ -135,6 +138,7 @@ def solicitaEndereco():
     print("Bairro................:")
     print("Zona..................:\n")
     informaEndereco()
+    print('\n')
 
 def informaEndereco():
     global rua
@@ -143,7 +147,7 @@ def informaEndereco():
     arquivo.write("\nRua: " + rua)
     global numero
     print("Numero :")
-    n = input()
+    numero = input()
     arquivo.write("\nNumero: " + numero)
     global bairro
     print("Bairro :")
@@ -159,9 +163,9 @@ def informaEndereco():
         print("Preencha a rua")
         rua = input()
         arquivo.write("\nRua: " + rua)
-    if n == "":
+    if numero == "":
         print("Preencha o numero")
-        n = input()
+        numero = input()
         arquivo.write("\nNumero: " + numero)
     elif bairro == "":
         print("Preencha o bairro")
@@ -173,7 +177,10 @@ def informaEndereco():
         arquivo.write("\nZona: " + zona)
 
 
-def nota(nome):
+def nota(nome, total):
+  global nome_burguer
+  global q
+  global valor_lanche
   print('*******************************')
   print('Dados do cliente: ' + nome)
   print('*******************************')
@@ -184,4 +191,8 @@ def nota(nome):
   print('*******************************')
   print('Dados do Pedido')
   print('*******************************')
-  
+  print('Produto: ' + str(nome_burguer))  
+  print('Quantidade: ' + str(q))  
+  print('Valor: ' + str(valor_lanche))
+  print('Valor Total: ' + str(total))  
+  print('*******************************')

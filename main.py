@@ -48,8 +48,7 @@ while True:
 corrigirPedido()
 solicitaEndereco()
 print('Aguarde enquanto processamos o seu pedido...\n')
-nota(nome)
-
+nota(nome, total)
   
 while True:
   resp = resposta()
