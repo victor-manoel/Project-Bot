@@ -44,6 +44,8 @@ def cardapioCompleto():
 
 
 def pedido():
+  global q
+  global valor_lanche
   print('Escolha o codigo do seu pedido')
   lanche = input ()
   valor_lanche = 0
@@ -73,58 +75,6 @@ def pedido():
     
   return valor_lanche
 
-
-def corrigirPedido():
-    total = 0
-    print("Deseja trocar o pedido?")
-    res = input()
-    if 'nao' in res:
-        print("\nCerto")
-    else:
-        print('___________________________________________\n')
-        cardapioCompleto()
-        print('___________________________________________\n')
-        print("Escolha o código do seu novo pedido:\n")
-        lanche = input ()
-        valor_lanche = 0
-
-        q = float(input("Quantos ???\n"))
-
-        if lanche=="1":
-          valor_lanche = 10 * q
-          nome_burguer = "Brasil"
-        elif lanche=="2":
-          valor_lanche = 15 * q
-          nome_burguer = "Alemanha"
-        elif lanche=="3":
-          valor_lanche = 16 * q
-          nome_burguer = "Argentina"
-        elif lanche == "4":
-          valor_lanche = 18 * q
-          nome_burguer = "Italia"
-        elif lanche == "5":
-          valor_lanche = 21 * q
-          nome_burguer = "Belgica"
-        else:
-          nome_burguer = None
-          print ('Valor invalido')
-        if nome_burguer:
-          print (nome_burguer,"custa",valor_lanche,"Reais, por",q,"hamburguer(s)")
-
-        while True:
-          print('Quer fazer mais algum pedido ? Responda com sim ou nao')
-          resp = resposta()
-          if resp == 'sim':
-            cardapioCompleto()
-            total += pedido()
-          elif resp == 'nao':
-            valor_total(total)
-            break
-          else:
-            print('Digite sim ou não')
-
-            #faltando ajeitar o loop
-                
 
 def valor_total(valor_lanche):
   total = valor_lanche
@@ -191,8 +141,6 @@ def nota(nome, total):
   print('*******************************')
   print('Dados do Pedido')
   print('*******************************')
-  print('Produto: ' + str(nome_burguer))  
-  print('Quantidade: ' + str(q))  
-  print('Valor: ' + str(valor_lanche))
+  print('Produto: Hamburguer')   
   print('Valor Total: ' + str(total))  
   print('*******************************')

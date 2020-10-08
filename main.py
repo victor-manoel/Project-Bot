@@ -20,7 +20,7 @@ while True:
     print('Digite sim ou nao')
 
 
-print('Quer fazer um pedido ? responda com sim ou nao')
+"""print('Quer fazer um pedido ? responda com sim ou nao')
 while True:
   resp = resposta()
   if resp == 'sim':
@@ -30,22 +30,40 @@ while True:
     sys.exit() 
     break
   else:
-    print('Digite sim ou não')
+    print('Digite sim ou não')"""
    
-
+pedidos = 0
 while True:
-  print('Quer fazer mais algum pedido ? Responda com sim ou nao')
+  while True:
+    if pedidos == 0:
+      print('Quer fazer um pedido ? Responda com sim ou nao')
+    else:
+      print('Quer fazer mais algum pedido ? Responda com sim ou nao')
+
+    resp = resposta()
+    if resp == 'sim':
+      cardapioCompleto()
+      total += pedido()
+      pedidos += 1
+    elif resp == 'nao':
+      if pedidos == 0:
+        sys.exit()
+      else:
+        valor_total(total)
+      break
+    else:
+      print('Digite sim ou não')
+      
+  print('Deseja corrigir o seu pedido ?')
   resp = resposta()
   if resp == 'sim':
     cardapioCompleto()
-    total += pedido()
-  elif resp == 'nao':
-    valor_total(total)
-    break
+    total = pedido()
+    pedidos = 1
+    continue
   else:
-    print('Digite sim ou não')
-    
-corrigirPedido()
+    break
+
 solicitaEndereco()
 print('Aguarde enquanto processamos o seu pedido...\n')
 nota(nome, total)
