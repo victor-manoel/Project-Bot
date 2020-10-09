@@ -19,18 +19,6 @@ while True:
   else:
     print('Digite sim ou nao')
 
-
-"""print('Quer fazer um pedido ? responda com sim ou nao')
-while True:
-  resp = resposta()
-  if resp == 'sim':
-    total += pedido()
-    break
-  elif resp == 'nao':
-    sys.exit() 
-    break
-  else:
-    print('Digite sim ou não')"""
    
 pedidos = 0
 while True:
@@ -67,6 +55,8 @@ while True:
 solicitaEndereco()
 print('Aguarde enquanto processamos o seu pedido...\n')
 nota(nome, total)
+
+confirmarpedido()
   
 while True:
   resp = resposta()

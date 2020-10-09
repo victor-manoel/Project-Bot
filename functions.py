@@ -7,6 +7,7 @@ zona = 0
 nome_burguer = 0
 q = 0
 valor_lanche = 0
+rtroco = 0
 
 def resposta():
   resp = input('>: ').lower().replace('é','e')
@@ -88,6 +89,7 @@ def solicitaEndereco():
     print("Bairro................:")
     print("Zona..................:\n")
     informaEndereco()
+    troco()
     print('\n')
 
 def informaEndereco():
@@ -128,6 +130,7 @@ def informaEndereco():
 
 
 def nota(nome, total):
+  global rtroco
   global nome_burguer
   global q
   global valor_lanche
@@ -144,3 +147,28 @@ def nota(nome, total):
   print('Produto: Hamburguer')   
   print('Valor Total: ' + str(total))  
   print('*******************************')
+  if rtroco != 0:
+    print("Observação: Troco para R$" + rtroco)
+  else:
+    print("Observação: Sem troco")
+    print("***********************************")
+
+
+def troco():
+    print("\nVai precisar de troco?")
+    troco1 = input()
+    if 'nao' in troco1:
+        print("Ok")
+    else:
+        print("Troco para quanto?")
+        global rtroco
+        rtroco = input()
+        arquivo.write("\nTroco: " + rtroco)
+        print("Certo")
+
+def confirmarpedido():
+    print("\nPosso confirmar o pedido?")
+    confp = input()
+    if 'sim' in confp:
+        print('Aguarde, seu pedido chegará em 30 minutos\n')
+        print('Obrigado pela preferencia')
