@@ -1,3 +1,5 @@
+arquivo= open("teste.txt", "w")
+
 #importar arquivo de outra pasta
 from functions import *
 #sys.exit linha 23 / função: finalizar programa
@@ -6,6 +8,7 @@ total = 0
 
 print('Olá, qual o seu nome ?')
 nome = pegaNome(resposta())
+arquivo.write("Nome: " + nome)
 resp = respondeNome(nome)
 print (resp)
 
@@ -41,7 +44,7 @@ while True:
       break
     else:
       print('Digite sim ou não')
-      
+
   print('Deseja corrigir o seu pedido ?')
   resp = resposta()
   if resp == 'sim':

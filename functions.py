@@ -1,4 +1,4 @@
-arquivo= open("teste.txt", "a")
+arquivo= open("teste1.txt", "a")
 
 rua = 0
 bairro= 0
@@ -47,11 +47,14 @@ def cardapioCompleto():
 def pedido():
   global q
   global valor_lanche
+  global lanche
   print('Escolha o codigo do seu pedido')
   lanche = input ()
+  arquivo.write("\nCódigo do pedido: " + lanche)
   valor_lanche = 0
 
   q = float(input("Quantos ???\n"))
+  arquivo.write("\nQuantidade: " + str(q))
 
   if lanche=="1":
     valor_lanche = 10 * q
@@ -79,6 +82,7 @@ def pedido():
 
 def valor_total(valor_lanche):
   total = valor_lanche
+  arquivo.write("\nTotal: " + str(total))
   print('o valor total é',total)
 
 
@@ -127,6 +131,7 @@ def informaEndereco():
         print("Preencha a zona")
         zona = input()
         arquivo.write("\nZona: " + zona)
+
 
 
 def nota(nome, total):
