@@ -6,7 +6,8 @@ from functions import *
 import sys
 total = 0
 
-print('Olá, qual o seu nome ?')
+bem_vindo = input()
+print(bem_vindo +', qual o seu nome ?')
 nome = pegaNome(resposta())
 arquivo.write("Nome: " + nome)
 resp = respondeNome(nome)
