@@ -1,6 +1,6 @@
-# Project-Bot
+# Project-Bot 🤖
  
-### python project of a robot to interact with a possible client
+### Python project of a robot to interact with a possible client !
  
  
 ## Services Used
